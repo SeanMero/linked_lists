@@ -1,15 +1,20 @@
 # contains methods for adding nodes a linked list
 class LinkedList
-  attr_accessor :number_of_nodes
+  attr_accessor :number_of_nodes, :head, :tail
 
   def initialize
     @head = nil
+    @tail = nil
     @number_of_nodes = 0
   end
 
   def append(value)
     this = Node.new(value)
-    @head = this if head == nil
+    if head == nil
+      @head = this
+    else
+      @tail = this
+    end
     @number_of_nodes += 1
   end
 
@@ -26,5 +31,9 @@ class LinkedList
 
   def head
     puts @head
+  end
+
+  def tail
+    puts @tail
   end
 end
