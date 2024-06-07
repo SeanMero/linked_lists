@@ -40,4 +40,8 @@ class LinkedList
     @tail = self[-1]
     tail.next_node = nil
   end
+
+  def contains?(value)
+    self.include?(value)
+  end
 end
