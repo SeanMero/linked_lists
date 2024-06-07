@@ -2,7 +2,7 @@
 class LinkedList
   attr_accessor :number_of_nodes, :head, :tail
 
-  def initialize
+  def initialize(_a = [])
     @head = nil
     @tail = nil
     @number_of_nodes = 0
@@ -10,7 +10,8 @@ class LinkedList
 
   def append(value)
     this = Node.new(value)
-    if head == nil
+    self.push(this)
+    if head.nil?
       @head = this
     else
       @tail = this
@@ -20,6 +21,7 @@ class LinkedList
 
   def prepend(value)
     this = Node.new(value)
+    self.unpush(this)
     this.next_node = head
     @head = this
     @number_of_nodes += 1
@@ -29,11 +31,7 @@ class LinkedList
     puts number_of_nodes
   end
 
-  def head
-    puts @head
-  end
-
-  def tail
-    puts @tail
+  def at(index)
+    self[index]
   end
 end
