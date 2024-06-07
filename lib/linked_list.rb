@@ -44,4 +44,8 @@ class LinkedList
   def contains?(value)
     self.include?(value)
   end
+
+  def find(value)
+    self.find_index(value)
+  end
 end
