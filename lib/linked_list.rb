@@ -34,4 +34,10 @@ class LinkedList
   def at(index)
     self[index]
   end
+
+  def pop
+    self.delete(-1)
+    @tail = self[-1]
+    tail.next_node = nil
+  end
 end
