@@ -48,4 +48,8 @@ class LinkedList
   def find(value)
     self.find_index(value)
   end
+
+  def to_s
+    self.each { |elem| puts elem.value }
+  end
 end
